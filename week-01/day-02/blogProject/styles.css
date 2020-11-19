@@ -1,0 +1,48 @@
+h1 {
+    padding: 10px;
+    padding-left: 10%;
+}
+
+.headerbox {
+   
+background-color: rgba(0, 0, 0, 0.274);
+margin-top: -22px;
+margin-left: -10px;
+margin-right: -10px;
+  
+    }
+
+   
+    .mainbox {
+        padding: 10%;
+        padding-top: 0px;
+        }
+
+        .titleInputBox {
+            width: 400px;
+
+            padding: 1px;
+            border: 1px solid black;
+            display: block;
+            }
+
+        .contentInputBox {
+                padding: 1px;
+                border: 1px solid black;
+                display: block;
+                }
+
+        .submitbutton {
+            width: 80px;
+            height: 20px;
+            margin-top: 20px;
+            border-radius: 10%;
+            background: rgb(138, 218, 138);
+            text-align: center;
+                }
+
+        .blogBox {
+         padding: 1px;
+        border: 1px solid black;
+                        display: block;
+                 }
