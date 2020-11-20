@@ -51,5 +51,5 @@ console.log(i1 > i2 ** 2 && i1 < i2 ** 3)
 
 let j: number = 1521;
 // tell if j is divisible by 3 or 5 (as a boolean)*/
-console.log(1521 % 3 == 0 || 1521 % 5 == 0 )
+console.log(1521 % 3 == 0 || 1521 % 5 == 0)
 
