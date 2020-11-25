@@ -31,11 +31,8 @@ delete mymap[97];
 
 console.log(Object.keys(mymap).length)
 
-let seekNumber: any = 99;
+let seekNumber: number = 100;
 
-for (let key in mymap) {
-
-    if (key == seekNumber) {
-        console.log(`There is an associated value with key ${seekNumber} its value is ${mymap[seekNumber]}`)
-    }
-}
+if (mymap.hasOwnProperty(seekNumber)) {
+    console.log(`There is an associated value with key ${seekNumber} its value is ${mymap[seekNumber]}`)
+} else console.log(`There is not associated value with key ${seekNumber}`)
