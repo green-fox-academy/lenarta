@@ -10,12 +10,9 @@ function drawSquare(x, y, z) {
 }
 
 
-for (let i = 0; i < 80; i += 20) {
-    drawSquare(i, i, 20)
-}
-/*
-    for (let j = 20; j < 60; j += 20) {
-        drawSquare(i, i, j)
+for (let i = 10; i < 300; i+=i) {
+        drawSquare(i, i, i)
     }
-}
-*/
+
+  //  for (let j = 20; j < 200; j += 20) 
+
