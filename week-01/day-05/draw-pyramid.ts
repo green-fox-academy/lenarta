@@ -5,10 +5,10 @@ let lineCount: number = 4;
 let str: any = '*';
 let spc: any = ' '
 
-for (let i: number = 1; i <= lineCount; i++) {
-    for (let j: number = lineCount; j >= lineCount - 1; j--)
+for (let i: any = 1; i <= lineCount; i += i) {
+    // for (let j: number = lineCount; j >= lineCount - 1; j--)
 
-        console.log(str);
+    console.log(i * spc + str);
 }
 
 

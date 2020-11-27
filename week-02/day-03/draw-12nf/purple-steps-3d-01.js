@@ -9,10 +9,7 @@ function drawSquare(x, y, z) {
     ctx.fillRect(x, y, z, z);
 }
 
-
 for (let i = 10; i < 300; i+=i) {
         drawSquare(i, i, i)
     }
-
-  //  for (let j = 20; j < 200; j += 20) 
 
