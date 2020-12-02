@@ -6,7 +6,7 @@ export class Car {
     private _type: string;
 
 
-    constructor(capacity: number, fuelLevel: number, type: string) {
+    constructor(capacity: number, fuelLevel: number, type?: string) {
         if (capacity === 0) {
             this._capacity = 100;
         } else {
@@ -14,7 +14,7 @@ export class Car {
         }
         this._fuelLevel = fuelLevel;
         this._type = type;
-        this._amortizalodas = 0;
+        this._amortizalodas = 10;
     }
 
 
@@ -45,6 +45,11 @@ export class Car {
         }
     }
 
-}
 
+}
+let audi = new Car(1, 10,);
+console.log(audi)
+audi.drive();
+
+console.log(audi)
 
