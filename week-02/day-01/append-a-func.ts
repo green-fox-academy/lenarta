@@ -1,7 +1,8 @@
 'use strict'
 
 let typo: string = 'Chinchill';
-function appendAFunc(adda: string): string {
-    return typo + 'a';
+
+function appendAFunc(word: string) {
+    return word + 'a';
 }
 console.log(appendAFunc(typo));
