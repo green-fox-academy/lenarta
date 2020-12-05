@@ -6,4 +6,3 @@ example = example.replace('dishwasher', 'galaxy');
 
 console.log(example);
 
-export = example;

@@ -36,35 +36,15 @@ class DiceSet {
 // Your task is to roll the dice until all of the dice are 6
 
 let diceSet = new DiceSet();
-diceSet.roll();
-console.log(diceSet);
 
+function fullSix() {
 
-for (let i: number = 0; i < diceSet.dice.length; i++) {
+    for (let i: number = 0; i < diceSet.dice.length; i++) {
 
-    while (diceSet.dice[i] != 6) {
-
-        diceSet.reroll(i);
-        console.log(diceSet.getCurrent());
+        while (diceSet.dice[i] != 6) {
+            diceSet.reroll(i);
+            console.log(diceSet.getCurrent());
+        }
     }
 }
-
-
-
-/*
-console.log("------------------");
-
-diceSet.reroll();
-console.log(diceSet.getCurrent());
-
-console.log("------------------");
-
-console.log(diceSet.getCurrent(5));
-diceSet.reroll();
-console.log(diceSet.getCurrent());
-
-console.log("------------------");
-
-diceSet.reroll(4);
-console.log(diceSet.getCurrent());
-*/
+fullSix.call(diceSet.roll());
