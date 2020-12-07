@@ -1,3 +1,5 @@
+export { }
+
 class DiceSet {
     dice: number[];
     readonly numOfDices: number = 6;

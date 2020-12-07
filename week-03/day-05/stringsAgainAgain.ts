@@ -4,11 +4,11 @@
 
 function xchange(text: string, i: number = text.length) {
 
-    if (i < 1) {
+    if (i < 2) {
         return text;
     }
-    return xchange(text.charAt[i] += '*'), i - 2;
+    return xchange(text.replace(text[i], text[i] + '*'), i - 2);
 }
 
 
-console.log(xchange('blabla blabla blabla'));
+console.log(xchange('blabla'));
