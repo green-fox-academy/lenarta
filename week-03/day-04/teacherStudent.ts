@@ -25,7 +25,7 @@ class Teacher {
 let teacher = new Teacher();
 let student = new Student();
 
-console.log(student.question());
-console.log(teacher.teach());
+student.question();
+teacher.teach();
 
 
