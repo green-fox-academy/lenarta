@@ -1,32 +1,30 @@
 'use strict';
 
-export class Student extends Teacher {
-
-
+export class Student {
 
     public learn(): void {
         console.log('The student is learning something new');
     }
-    public question() {
-        console.log(Teacher.answer());
+    public question(teacher: Teacher) {
+        teacher.answer();
     }
 }
 
-export class Teacher extends Student {
-
+export class Teacher {
 
     public answer() {
         console.log('The teacher is answering a question');
     }
-    public teach() {
-        console.log(Student.learn()); //getter?
-
+    public teach(student: Student) {
+        student.learn();
     }
 }
-let a = new Student;
-a.learn();
-a.question();
 
+let a = new Student;
 let b = new Teacher;
+
+a.learn();
+a.question(b);
+
 b.answer();
-b.teach();
+b.teach(a);

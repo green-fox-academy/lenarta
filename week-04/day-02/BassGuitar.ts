@@ -10,7 +10,12 @@ export class BassGuitar extends StringedInstruments {
         super('BassGuitar', numberOfStrings || 4)
         this._sounds = sounds || 'Duum-duum-duum';
     }
+
+    public sound(this: BassGuitar): string {
+        return this._sounds
+    }
+
     public play() {
-        console.log(`${this._name}, ${this._numberOfStrings}-stringed instrument that goes ${this._sounds}`);
+        console.log(`${this._name}, ${this._numberOfStrings}-stringed instrument that goes ${this.sound()}`);
     };
 }

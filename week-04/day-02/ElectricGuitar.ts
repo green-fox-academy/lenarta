@@ -10,7 +10,12 @@ export class ElectricGuitar extends StringedInstruments {
         super('Electric Guitar', numberOfStrings || 6)
         this._sounds = sounds || 'Twang';
     }
+
+    public sound(this: ElectricGuitar): string {
+        return this._sounds
+    }
+
     public play() {
-        console.log(`${this._name}, ${this._numberOfStrings}-stringed instrument that goes ${this._sounds}`);
+        console.log(`${this._name}, ${this._numberOfStrings}-stringed instrument that goes ${this.sound()}`);
     };
 }

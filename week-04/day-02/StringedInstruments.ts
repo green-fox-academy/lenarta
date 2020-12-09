@@ -9,5 +9,5 @@ export abstract class StringedInstruments extends Instrument {
         super(name);
         this._numberOfStrings = numberOfStrings;
     }
-    public sound() { };
+    abstract sound(): string;
 }
