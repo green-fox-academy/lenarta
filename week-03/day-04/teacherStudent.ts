@@ -1,31 +1,32 @@
-class Student {
+'use strict';
 
-    constructor() { }
+export class Student extends Teacher {
+
+
 
     public learn(): void {
         console.log('The student is learning something new');
     }
     public question() {
-        return teacher.answer();
+        console.log(Teacher.answer());
     }
 }
 
-class Teacher {
+export class Teacher extends Student {
 
-    constructor() { }
 
-    public answer(): void {
+    public answer() {
         console.log('The teacher is answering a question');
     }
     public teach() {
-        return student.learn();
+        console.log(Student.learn()); //getter?
+
     }
 }
+let a = new Student;
+a.learn();
+a.question();
 
-let teacher = new Teacher();
-let student = new Student();
-
-student.question();
-teacher.teach();
-
-
+let b = new Teacher;
+b.answer();
+b.teach();

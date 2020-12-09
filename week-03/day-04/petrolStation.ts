@@ -1,17 +1,16 @@
-class Station {
+'use strict';
+
+export class Station {
     public _gasAmount: number = 1000;
 
     constructor() { }
 
-    public refill(_capacity: Car) {
-        return (
-            this._gasAmount - new Car()._capacity,
-            (new Car()._carGasAmount = new Car()._capacity)
-        );
+    public refill(carCapacity: number) {
+        return this._gasAmount -= 
     }
 }
 
-class Car {
+export class Car {
     public _capacity: number;
     public _carGasAmount: number;
 
@@ -19,9 +18,6 @@ class Car {
         this._capacity = capacity;
         this._carGasAmount = carGasAmount;
     }
+
 }
-
-let audi = new Car();
-console.log();
-
-Station.call(refill(audi._capacity));
+let audi = new Car;
