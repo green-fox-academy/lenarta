@@ -126,10 +126,10 @@ export class Cohort {
   }
 }
 
-/*
+
 let ego = new Cohort("Ego");
 let student = new Student("Feri");
 console.log(student);
 ego.addStudent(student);
 ego.info();
-*/
+

@@ -7,9 +7,11 @@
 
 const fs = require("fs");
 const characterEncoding: string = 'utf-8';
+let fileContent: string;
 
 try {
-    let fileContent = fs.readFileSync("my-file.txt", "utf-8");
+    fileContent = fs.readFileSync('my-file.txt', characterEncoding);
 } catch (e) {
-    console.log('Unable to read file: my-file.txt"');
+    console.log('Unable to read file: my-file.txt');
 }
+console.log(fileContent);

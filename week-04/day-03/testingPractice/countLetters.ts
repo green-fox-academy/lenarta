@@ -1,7 +1,7 @@
 'use strict';
 
 export function countLetters(text: string) {
-    let dictionary = {}
+    let dictionary = []
 
     for (let i: number = 0; i < text.length; i++) {
 
@@ -13,5 +13,4 @@ export function countLetters(text: string) {
     }
     return dictionary
 }
-
-console.log(countLetters('saaajooosstttettakok'));
+console.log(countLetters('sajtt'));
