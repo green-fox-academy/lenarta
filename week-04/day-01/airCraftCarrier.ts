@@ -25,11 +25,17 @@ export class Aircraft {
       return ammoToFill - this._maxAmmo;
     } else this._ammo = ammoToFill;
   }
+  public getPriority() {
+    return this._priority;
+  }
+  public isNeedAmmo() {
+    return this._isNeedAmmo;
+  }
   public getMaxammo() {
-    return this._maxAmmo
+    return this._maxAmmo;
   }
   public getType() {
-    return this._type
+    return this._type;
   }
   public getDamage() {
     return this._allDamage;
@@ -43,12 +49,12 @@ export class Aircraft {
     for (let i: number = 0; 0 < this._ammo && i < useAmmo; i++) {
       this._ammo -= 1;
       this._allDamage += this._baseDamage
-      console.log(`${this._ammo} ammo left`)
+      //console.log(`${this._ammo} ammo left`)
     }
 
     if (this._ammo <= 0) {
       this._isNeedAmmo = true;
-      console.log('Refill needed')
+      console.log(`${this._type} refill needed`)
     }
   }
 
@@ -81,20 +87,24 @@ export class F35 extends Aircraft {
     super(type, maxAmmo, baseDamage, ammo, allDamage, isNeedAmmo, priority)
   }
 }
-
-
-
-
+/*
 let a = new F16();
 let b = new F35();
 
 a.refill(10);
-a.fight(9);
-
-//b.refill(10);
-//b.fight(3);
-
+a.fight(2);
+a.fight(3);
 console.log(a);
 
+
+b.refill(10);
+b.fight(3);
+console.log(b);
+
+a.fight(8);
+
 console.log(a.geStatus());
+//console.log(a, b);
+
 //console.log(b.geStatus());
+*/
