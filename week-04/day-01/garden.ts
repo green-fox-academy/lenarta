@@ -5,7 +5,7 @@ export class Garden {
   protected _toWater: toWater[];
 
 }
-}
+
 
 export class Plants {
   protected _color: string;
