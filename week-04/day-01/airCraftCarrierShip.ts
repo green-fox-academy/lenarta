@@ -7,15 +7,23 @@ export class Carrier {
   protected _ammoAvailable: number;
   protected _healthPoints: number;
   protected _listOfAircrafts: Aircraft[];
-  protected _toAmmo: Aircraft[];
   protected _totalDamage: number;
 
 
-  constructor(ammoAvailable: number, healthPoints: number) {
+  constructor(ammoAvailable: number, healthPoints: number, totalDamage?: number) {
     this._ammoAvailable = ammoAvailable;
     this._healthPoints = healthPoints;
     this._listOfAircrafts = [];
-    this._toAmmo = [];
+    this._totalDamage = totalDamage;
+  }
+
+
+  public getTotalDamage(): number {
+
+    for (let i: number; i < this._listOfAircrafts.length; i++) {
+      this._totalDamage += this._listOfAircrafts[i].getDamage();
+    }
+    return this._totalDamage;
   }
 
   public addAirCraft(plane: Aircraft) {
@@ -46,8 +54,10 @@ export class Carrier {
         } else this.fill(plane);
       });
     }
+  }
 
-
+  public getStatus(): void {
+    console.log(`HP: ${this._healthPoints}, Aircraft count: ${this._listOfAircrafts.length}, Ammo storage: ${this._ammoAvailable}, Total damage: ${this.getTotalDamage()}`)
   }
 }
 
@@ -65,7 +75,9 @@ c.fight(5)
 muki.fill(d);
 d.fight(6)
 
-console.log(muki);
+//console.log(muki);
+muki.getStatus();
+
 
 //muki.fill(d, 8);
 //console.log(muki);

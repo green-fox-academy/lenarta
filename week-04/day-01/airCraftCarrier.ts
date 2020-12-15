@@ -19,11 +19,13 @@ export class Aircraft {
     this._priority = priority;
     this._isNeedAmmo = isNeedAmmo;
   }
-  public refill(ammoToFill: number) {
+  public refill(ammoToFill: number): number {
     if (ammoToFill > this._maxAmmo) {
       this._ammo = this._maxAmmo;
       return ammoToFill - this._maxAmmo;
-    } else this._ammo = ammoToFill;
+    } else this._ammo += ammoToFill;
+    return ammoToFill
+
   }
   public getPriority() {
     return this._priority;
