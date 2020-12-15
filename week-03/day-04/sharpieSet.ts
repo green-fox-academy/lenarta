@@ -24,8 +24,8 @@ export class Sharpie {
   public get usable(): boolean {
     return this._usable;
   }
-  public set usable(x) {
-    this._usable = x
+  public set usable(usable: boolean) {
+    this._usable = usable;
   }
 
 }
@@ -72,3 +72,9 @@ console.log(list);
 
 list.removeTrash();
 console.log(list);
+
+marker2.usable = false;
+
+list.removeTrash();
+console.log(list);
+
