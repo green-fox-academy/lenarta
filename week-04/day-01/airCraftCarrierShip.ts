@@ -75,7 +75,7 @@ c.fight(5)
 muki.fill(d);
 d.fight(6)
 
-//console.log(muki);
+console.log(d.getDamage());
 muki.getStatus();
 
 
