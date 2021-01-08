@@ -27,6 +27,7 @@ function initializePokemon(): Pokemon[] {
 function chooseEffective(arrayPokemon: Pokemon[], givenPokemon: Pokemon) {
     for (let i: number = 0; i < arrayPokemon.length; i++) {
         if (arrayPokemon[i].isEffectiveAgainst(givenPokemon)) {
+            return arrayPokemon[i].name
         }
     }
 }

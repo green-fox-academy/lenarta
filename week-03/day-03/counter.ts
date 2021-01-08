@@ -1,33 +1,30 @@
-'use strict';
+"use strict";
 
 export class Counter {
+  private _integer: number;
+  private _initial: number;
 
-    private _integer: number;
-    private _initial: number;
+  constructor(initial = 0) {
+    this._integer = initial;
+    this._initial = initial;
+  }
 
-    constructor(initial = 0) {
-
-        this._integer = initial;
-        this._initial = initial;
+  public add(number?: number): void {
+    if (number) {
+      this._integer += number;
+    } else {
+      this._integer++;
     }
+  }
 
-    public add(number?): void {
-        if (number) {
-            this._integer += number;
-        } else {
-            this._integer++;
-        }
-    }
+  public get(): number {
+    return this._integer;
+  }
 
-    public get(): number {
-        return this._integer;
-    }
-
-    public reset(): void {
-        this._integer = this._initial;
-    }
+  public reset(): void {
+    this._integer = this._initial;
+  }
 }
-
 
 let x = new Counter();
 
@@ -39,5 +36,3 @@ console.log(x);
 
 x.reset();
 console.log(x);
-
-

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Workshop: onclick</title>
     <style>
       body {
@@ -27,4 +27,15 @@
     OR
     <script src="events-1.js"></script> -->
   </body>
+  <script>
+    'use strict';
+    const button = document.querySelector('button');
+    const content = document.querySelector('body');
+
+    button.onclick = () => {
+      if (!content.classList.contains('party')) {
+        content.classList.add('party');
+      } else content.classList.remove('party');
+    };
+  </script>
 </html>

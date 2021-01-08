@@ -4,28 +4,24 @@
 // should not raise any error.
 
 'use strict';
-export { }
 
-const fs = require("fs");
-const characterEncoding: string = 'utf-8';
+export {};
 
-let myFile: string = 'myfile.txt';
+const fs = require('fs');
+const charEncode: string = 'utf-8';
 
-function linesCount(filename: string) {
-    let myNum: number = 2;
-    try {
-        let fileContent = fs.readFileSync(myFile, "utf-8");
-        let content: number = myFile.split('\n').length;
-        console.log(content)
-    }
-    catch (e) {
-        console.log(0)
-        myNum = 0;
-    }
-    return myNum
+let myFile: string = 'my-file.txt';
 
+function linesCount(myFile: string) {
+  let count: number;
+  try {
+    let content = fs.readFileSync(myFile, charEncode);
+    console.log(content);
+    count = content.split('\r\n').length;
+  } catch (e) {
+    console.log(`File not found: ${myFile}`);
+  }
+  return count;
 }
 
-linesCount(myFile)
-console.log(myNum)
-
+console.log(linesCount(myFile));

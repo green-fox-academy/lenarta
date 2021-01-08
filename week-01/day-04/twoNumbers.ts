@@ -1,3 +1,5 @@
+'use strict';
+
 let firstNumber: number = 22;
 let secondNumber: number = 13;
 

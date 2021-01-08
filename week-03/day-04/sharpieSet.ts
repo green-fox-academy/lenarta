@@ -1,14 +1,12 @@
-'use strict';
+"use strict";
 
 export class Sharpie {
-
   protected _color: string;
   private _width: number;
   private _inkAmount: number;
   protected _usable: boolean;
 
-
-  constructor(color: string, width?: number, inkAmount = 10, usable = true,) {
+  constructor(color: string, width?: number, inkAmount = 10, usable = true) {
     this._color = color;
     this._width = width;
     this._inkAmount = inkAmount;
@@ -16,7 +14,7 @@ export class Sharpie {
   }
 
   public use(occasion?: number) {
-    this._inkAmount -= (5 * occasion);
+    this._inkAmount -= 5 * occasion;
   }
   public get inkAmount(): number {
     return this._inkAmount;
@@ -27,9 +25,7 @@ export class Sharpie {
   public set usable(usable: boolean) {
     this._usable = usable;
   }
-
 }
-
 
 class SharpieSet {
   private _list: Sharpie[];
@@ -43,15 +39,12 @@ class SharpieSet {
       sharpie.usable = false;
     }
   }
-
   public addSharpie(sharpie: Sharpie) {
     this._list.push(sharpie);
   }
-
   public removeTrash() {
-
     for (let i: number = 0; i < this._list.length; i++) {
-      this.countUsable(this._list[i])
+      this.countUsable(this._list[i]);
       if (!this._list[i].usable) {
         this._list.splice(i, 1);
       }
@@ -59,13 +52,14 @@ class SharpieSet {
   }
 }
 
-let marker1 = new Sharpie('lime');
-let marker2 = new Sharpie('red');
+let marker1 = new Sharpie("lime");
+let marker2 = new Sharpie("red");
 
-let list = new SharpieSet;
+let list = new SharpieSet();
 
 list.addSharpie(marker1);
 list.addSharpie(marker2);
+list.addSharpie(new Sharpie("blue"));
 
 marker1.use(2);
 console.log(list);
@@ -77,4 +71,3 @@ marker2.usable = false;
 
 list.removeTrash();
 console.log(list);
-

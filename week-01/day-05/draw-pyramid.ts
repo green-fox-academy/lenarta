@@ -1,21 +1,20 @@
 'use strict';
-export { }
+export {};
 
 let lineCount: number = 4;
-let str: any = '*';
-let spc: any = ' '
 
-for (let i: any = 1; i <= lineCount; i += i) {
-    // for (let j: number = lineCount; j >= lineCount - 1; j--)
+let space: string = ' ';
+let printedSpace: string = '';
 
-    console.log(i * spc + str);
+let str1: string = '**';
+let printedStars: string = '*';
+
+for (let i: number = 0; i < lineCount; i++) {
+  printedSpace = printedSpace.concat(space);
 }
 
-
-/*
-for (let i: number = 1; i <= 4; i++) {
-    for (let j: number = 1; j >= 4 - j; j++)
-
-        console.log('*');
+for (let i: number = 0; i < lineCount; i++) {
+  printedSpace = printedSpace.slice(1);
+  console.log(printedSpace.concat(printedStars));
+  printedStars = printedStars.concat(str1);
 }
-*/

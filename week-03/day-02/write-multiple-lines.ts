@@ -6,22 +6,20 @@
 // If the word is 'apple' and the number is 5, it should write 5 lines
 // into the file and each line should read 'apple'
 // The function should not raise any errors if it could not write the file.
-export { }
+export {};
 
-'use strict'
+('use strict');
 
 const fs = require('fs');
 
 function writeInLine(path: string, word: string, number: number) {
-
-    try {
-        for (let i: number = 0; i < number; i++) {
-            fs.writeFileSync(path, word + '\r\n', { 'flag': 'a' })
-        }
+  try {
+    for (let i: number = 0; i < number; i++) {
+      fs.writeFileSync(path, word + '\r\n', { flag: 'a' });
     }
-    catch (e) {
-        console.log('Unable to write file: my-file.txt');
-    }
+  } catch (e) {
+    console.log('Unable to write file: my-file.txt');
+  }
 }
 
-writeInLine('my-file.txt', 'apple', 5)
+writeInLine('myfile.txt', 'apple', 5);

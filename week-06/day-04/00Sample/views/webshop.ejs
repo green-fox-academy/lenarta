@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webshop</title>
+</head>
+<body>
+<% for(let szam = 0; szam < 11; szam++){ %>
+<%= szam %>
+<% } %>
+
+<% if (true) { %>
+Ez most latszik
+<% } %>
+
+
+<ul>
+  <% for(let i = 0; i < fruits.length; i++) { %>
+  <li><%= fruits[i] %></li>
+  <% } %>
+</ul>
+
+<a href="http://localhost:3000/hello<%=message%>?name=<%=name%>&lastname=<%=lastname%>">Visit me</a>
+
+
+</body>
+</html>
