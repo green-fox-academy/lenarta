@@ -1,33 +1,38 @@
 'use strict';
 
-const king = document.getElementById('b325');
-    console.log('king', king);
-    //window.alert(king.innerText);
+const pictures = [
+ {title: '' , path:'assets/pic01.jpg'},
+ {title: '' , path: 'assets/pic02.jpg'},
+ {title: 'Nebula' , path:'assets/pic03.jpg'},
+ {title: 'Pillars' , path: 'assets/pic04.jpg'},
+ {title: '' , path: 'assets/pic05.jpg'},
+ {title: '' , path: 'assets/pic06.jpg'},
+ {title: '' , path: 'assets/pic07.jpg'},
+ {title: '' , path:'assets/pic08.jpg'},
+]
 
-    const lamplighter = document.querySelector('.b329');
-    console.log('lamplighter', lamplighter);
+const mainPic = document.querySelector('img');
+console.log(mainPic.classList);
 
-    const asteroids = document.querySelectorAll('div.asteroid');
-    for (let i = 0; i < asteroids.length; i++) {
-      console.log(asteroids[i]);
-    }
+const picturebox = document.querySelector('.picturebox');
 
-    const businessLamp = [document.querySelector('p'), lamplighter]
-    for (let i = 0; i < businessLamp.length; i++) {
-      console.log('businessLamp', businessLamp[i]);
-    }
-    const conceitedMan = document.getElementsByClassName('asteroid b326')[0]
-    //console.log(conceitedMan[0])
+picturebox.setAttribute('style', 'background-image: url("assets/pic01.jpg");');
 
-    const conceitedKing = [king, conceitedMan]
-    console.log(document.getElementsByClassName('asteroid b326')[0]);
+let thumbNailList = document.querySelector('.thumbnails');
 
-    for (let i = 0; i < conceitedKing.length; i++) {
-      window.alert(conceitedKing[i].innerText)
-    }
+console.log(thumbNailList);
 
-    const noBusiness = [king, conceitedMan, lamplighter]
+for (let i = 0; i < pictures.length; i++) {
+  let newPic = document.createElement('li');
+  newPic.classList.add('pic')
+  newPic.id = `pic0${i+1}`;
+  console.log(newPic)
+  thumbNailList.appendChild(newPic);
+  newPic.setAttribute('style', `background-image: url("assets/pic0${i+1}.jpg");`);
+}
 
-    noBusiness.forEach(element => {
-      console.log('No business',element)
-    });
+
+
+button.onclick = () => {
+  
+};

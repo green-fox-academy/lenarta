@@ -31,11 +31,14 @@
     'use strict';
     const button = document.querySelector('button');
     const content = document.querySelector('body');
+    console.log(content);
 
     button.onclick = () => {
       if (!content.classList.contains('party')) {
         content.classList.add('party');
       } else content.classList.remove('party');
+      console.log(content);
+
     };
   </script>
 </html>
