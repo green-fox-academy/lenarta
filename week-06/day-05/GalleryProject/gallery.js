@@ -12,7 +12,6 @@ const pictures = [
 ];
 
 const mainPic = document.querySelector('img');
-console.log(Object.values(pictures));
 
 const picturebox = document.querySelector('.picturebox');
 let currentPic = 0;
@@ -30,28 +29,40 @@ for (let i = 0; i < pictures.length; i++) {
   let newPic = document.createElement('li');
   newPic.classList.add('pic');
   newPic.id = `pic0${i + 1}`;
-  console.log(newPic);
   thumbNailList.appendChild(newPic);
-  newPic.setAttribute(
-    'style',
-    `background-image: url("${pictures[i].path}");`
-  );
+  newPic.setAttribute('style', `background-image: url("${pictures[i].path}");`);
 }
+
+let activeThumbnailList = document.querySelectorAll('li');
+const title = document.querySelector('h1');
 
 const rightButton = document.getElementById('right');
 rightButton.onclick = () => {
+
+  
   picturebox.setAttribute(
     'style',
     `background-image: url("${pictures[currentPic + 1].path}");`
   );
-
   let counter = currentPic + 1;
   counter++;
   currentPic++;
+  console.log(counter, currentPic);
+
+  
+  activeThumbnailList.forEach((element) => {
+    element.classList.remove('active');
+  });
+  
+  activeThumbnailList[currentPic].classList.add('active');
 
   if (counter === pictures.length) {
-    currentPic = -1;
+    currentPic = - 1;
   }
+
+  if (pictures[currentPic].title.length > 0) {
+    title.innerText = `${pictures[currentPic].title}`
+  } else title.innerText = 'Without title'
 };
 
 const leftButton = document.getElementById('left');
@@ -64,7 +75,6 @@ leftButton.onclick = () => {
       `background-image: url("${pictures[pictures.length - 1].path}");`
     );
     currentPic = pictures.length - 1;
-    console.log(counter, currentPic);
   } else {
     picturebox.setAttribute(
       'style',
@@ -73,4 +83,16 @@ leftButton.onclick = () => {
     counter--;
     currentPic--;
   }
+
+  activeThumbnailList.forEach((element) => {
+    element.classList.remove('active');
+  });
+
+  activeThumbnailList[currentPic].classList.add('active');
+  
+  if (pictures[currentPic].title.length > 0) {
+    title.innerText = `${pictures[currentPic].title}`
+  } else title.innerText = 'Without title'
 };
+
+
