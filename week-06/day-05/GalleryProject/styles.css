@@ -2,7 +2,6 @@
 body {
   height: 0;
   display: flex;
-  justify-content: space-evenly;
   justify-content: center;
   padding-top: 56.25%;
   position: relative;
@@ -12,7 +11,7 @@ body {
 .mainbox {
   display: flex;
   position: absolute;
-  top: 20%;
+  top: 10%;
   width: 75%;
   height: 80%;
   justify-content: space-evenly;
@@ -24,7 +23,6 @@ body {
   position: absolute;
   width: 100%;
 }
-
 
 .picturebox {
   position: relative;
@@ -56,28 +54,22 @@ p {
   font-size: 1.5vw;
 }
 
-#left {
-  width: 10%;
-  order: 1;
-  height: 100%;
+button {
+  all: unset;
+  border: none;
+  margin: 0;
+  text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.322);
+  background-position: center;
   background-image: url("assets/arrow.svg");
   background-repeat: no-repeat;
-  background-position: center;
-  border:none;
-  background-color: rgba(255, 255, 255, 0.322);
-  text-decoration: none;
+  width: 10%;
+  cursor: pointer;
 }
 
 #right {
-  width: 10%;
   order: 3;
-  height: 100%;
-  background-image: url("assets/arrow.svg");
-  background-repeat: no-repeat;
-  background-position: center;
   transform: scaleX(-1);
-  border:none;
-  background-color: rgba(255, 255, 255, 0.322);
 }
 
 .thumbnails {
@@ -99,7 +91,6 @@ p {
   background-size: cover;
   background-image: cover;
   border-radius: 3px;
-
 }
 
 .active {
