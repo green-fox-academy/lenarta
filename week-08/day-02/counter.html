@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Workshop: EventListeners</title>
+  </head>
+  <body>
+    <ul>
+      <li>apple</li>
+      <li>balloon</li>
+      <li>cat</li>
+      <li>dolphin</li>
+    </ul>
+    <button>How many items are in the list?</button>
+    <p class="result">dunno :(</p>
+
+    <!-- You can work in the html or in a separate js file. Like:
+
+    <script>
+      On the click of the button,
+      Count the items in the list
+      And display the result in the result element.
+    </script>
+
+    OR
+
+    <script src="events-2.js"></script> -->
+
+    <script>
+      counter = (list) => {
+        let arraY = document.querySelectorAll(list);
+        let number = 0;
+        for (let i = 0; i < arraY.length; i++) {
+          number += 1;
+        }
+        return number;
+      };
+
+      let button = document.querySelector('button');
+
+      button.addEventListener('click', (event) => {
+        let result = document.querySelector('.result');
+        result.innerText = counter('li');
+      });
+      
+    </script>
+  </body>
+</html>

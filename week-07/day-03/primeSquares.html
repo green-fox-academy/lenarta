@@ -46,7 +46,7 @@
 
       const list = document.querySelector('section');
 
-      for (let i = 2; i < 100; i++) {
+      for (let i = 2; i <= 100; i++) {
         let newDiv = document.createElement('div');
         newDiv.innerText = i;
         list.appendChild(newDiv);
@@ -61,18 +61,18 @@
 
         if (check < 2) {
           divList[number].classList.add('not-prime');
+          return
         }
 
         for (let i = 2; i < check; i++) {
           if (check % i == 0) {
             console.log(i);
             divList[number].classList.add('not-prime');
-            console.log(divList[number]);
+            //console.log(divList[number]);
             return;
-          } else {
-            divList[number].classList.add('prime');
-          }
+          } 
         }
+        divList[number].classList.add('prime');
       };
 
       function counter() {
@@ -80,16 +80,15 @@
         const countInterval = setInterval(() => {
           primeValidator(count);
           count++;
-
-          if (count > 19) {
+          if (count > 99) {
             clearInterval(countInterval);
           }
-        }, 1000);
+        }, 100);
       }
 
-      //counter();
+      counter();
 
-      primeValidator(8);
+      //primeValidator(8);
     </script>
   </body>
 </html>

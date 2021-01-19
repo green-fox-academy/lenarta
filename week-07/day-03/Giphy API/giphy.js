@@ -14,8 +14,14 @@ xhr.onload = () => {
   const thumbnails = document.querySelector('.thumbnails');
 
   for (let i = 0; i < giphylist.data.length && i < 17; i++) {
-    let giphy = document.createElement('li');
-    giphy.innerHTML = `<a href="${giphylist.data[i].embed_url}"><img src="${giphylist.data[i].images.fixed_height.url}[0]" style="all:unset;background-attachment:fixed;width:80px;height:80px;list-style-type:none;"></a>`;
+    let giphy = document.createElement('div');
+    //giphy.style.display = 'border-box;';
+    //giphy.style.backgroundAttachment = 'fixed;';
+    //giphy.style.maxWidth = '100px;';
+    //giphy.style.maxHeight = '100px;';
+    //giphy.style.backgroundImage = `url("${giphylist.data[i].images.fixed_height.url}");`
+    giphy.innerHTML = `<a href="${giphylist.data[i].embed_url}"><img src="${giphylist.data[i].images.fixed_height.url}[0]"></img></a>`;
     thumbnails.appendChild(giphy);
   }
 };
+//

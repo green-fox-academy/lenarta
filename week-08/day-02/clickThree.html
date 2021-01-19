@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>Gomba</button>
+
+    <script>
+      let button = document.querySelector('button');
+      let clickCount = 0;
+      const body = document.querySelector('body');
+      const parag = document.createElement('p');
+
+      message = () => {
+        parag.innerText = '5 seconds elapsed and clicked 3 times';
+        body.appendChild(parag);
+      };
+
+      window.addEventListener('load', (e) => {
+
+        button.addEventListener('click', () => {
+          clickCount++;
+          console.log(clickCount);
+        });
+
+        setTimeout(() => {
+            if (clickCount >= 3) {
+              message();
+            }
+        }, 5000);
+      });
+      
+    </script>
+  </body>
+</html>

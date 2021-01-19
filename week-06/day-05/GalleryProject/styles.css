@@ -13,7 +13,7 @@ body {
   position: absolute;
   top: 15%;
   width: 75%;
-  height: 75%;
+  height: 70%;
   justify-content: space-evenly;
 }
 
@@ -63,7 +63,7 @@ button {
   background-position: center;
   background-image: url("assets/arrow.svg");
   background-repeat: no-repeat;
-  width: 10%;
+  width: 12%;
   cursor: pointer;
 }
 

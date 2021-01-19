@@ -1,11 +1,11 @@
 'use strict';
 
 const express = require('express');
-const app = express();
 const mysql = require('mysql');
+const app = express();
 app.use(express.json());
 app.use(express.static('assets'))
-const path = require('path');
+//const path = require('path');
 
 
 let conn = mysql.createConnection({
@@ -21,7 +21,7 @@ conn.connect((err) => {
 });
 
 app.get('/', (req,res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  res.sendFile('index.html');
 });
 
 app.get('/title', (req,res) => {
