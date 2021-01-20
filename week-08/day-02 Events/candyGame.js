@@ -6,7 +6,7 @@ let lollypops = document.querySelector('.lollypops');
 addCandy = (number) => {
   candyNumber += number;
   candies.innerText = `${candyNumber}`;
-  console.log(candyNumber);
+  //console.log(candyNumber);
 };
 
 let createButton = document.querySelector('.create-candies');
@@ -19,8 +19,10 @@ buyButton.addEventListener('click', () => {
   if (candyNumber >= 100) {
     candyNumber -= 100;
     lollypopsNumber++;
-    lollypops.innerText += `🍭`;
-    console.log(lollypopsNumber);
+    if (lollypopsNumber % 10 === 0) {
+      lollypops.innerHTML += `🍭<br>`;
+    } else lollypops.innerText += `🍭`;
+    //console.log(lollypopsNumber);
   }
 });
 
@@ -36,7 +38,8 @@ machineButton.addEventListener('click', () => {
     let multi = Math.floor(lollypopsNumber / 10);
     if (lollypopsNumber >= 10) {
       addCandy(multi);
-      console.log(speed);
+      speedCount.innerText = multi * (1000/speed)
+      //console.log(speed);
     }
   }, speed);
 });
@@ -48,7 +51,7 @@ setInterval(() => {
   if (lollypopsNumber >= 10) {
     addCandy(multi);
     speedCount.innerText = multi * (1000/speed)
-    console.log(speed);
+    //console.log(speed);
   }
 }, speed);
 

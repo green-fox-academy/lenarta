@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Button Disable</title>
+  <style>
+    body {
+      padding: 15%;
+      display: flex;
+      text-align: center;
+      flex-direction: column;
+      background-color: rgba(128, 128, 128, 0.171);
+    }
+
+    .radio {
+      flex-direction: column;
+      display: flex;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    form {
+      display: flex;
+      background-color: white;
+      padding: 10%;
+      align-self: center;
+      flex-direction: column;
+      align-content: center;
+      text-align: left;
+      width: 300px;
+      height: 300px;
+      align-self: center;
+    }
+
+    input {
+      text-size-adjust: auto;
+    }
+
+    button {
+      background-color: rgb(58, 54, 124);
+      width: 80px;
+      border-radius: 30px;
+      color: white;
+    }
+
+    button {
+      background-color: rgb(62, 53, 141);
+      opacity: 0.4;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <form>
+      <div class="radio">
+        <label for="Dog">
+          Dog
+          <input id="Dog " type="radio" name="animal" value="Dog" />
+        </label>
+        <label for="Cat">
+          Cat
+          <input id="Cat" type="radio" name="animal" value="Cat" />
+        </label>
+        <label for="Viktor">
+          Viktor the goldfish
+          <input id="Viktor" type="radio" name="animal" value="Viktor" />
+        </label>
+      </div>
+
+      <p>Do you want to sign up for cat facts?</p>
+
+      <div class="yesno">
+        <label for="Yes">
+          Yes
+          <input id="Yes" type="radio" name="button" value="yes"/>
+        </label>
+        <label for="No">
+          No
+          <input id="No" type="radio" name="button" value="no"/>
+        </label>
+      </div>
+      <br>
+
+      <div class="hidden">
+        <button id="lovecats" type="submit" value="lovecats">I love cats</button>
+        <br><br>
+        <button id="signup" type="submit" value="signup">Sign up</button>
+
+      </div>
+    </form>
+
+  </div>
+  <script src="buttonDisable.js"></script>
+</body>
+
+</html>

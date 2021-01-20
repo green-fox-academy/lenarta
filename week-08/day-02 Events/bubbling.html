@@ -52,6 +52,8 @@
 
     <script src="bubbling.js"></script> -->
     <script>
+      
+
       const nav = document.querySelector('nav');
       let y = 0;
       let x = 0;
@@ -71,34 +73,35 @@
 
         if (e.target.innerText === 'Up') {
           y -= 10;
-          console.log(y);
-          align(main);
+          //console.log(y);
+          //align(main);
         }
         if (e.target.innerText === 'Down') {
           y += 10;
-          console.log(y);
-          align(main);
+          //console.log(y);
+          //align(main);
         }
         if (e.target.innerText === 'Left') {
           x -= 10;
-          console.log(y);
-          align(main);
+          //console.log(y);
+          //align(main);
         }
         if (e.target.innerText === 'Right') {
           x += 10;
-          console.log(y);
-          align(main);
+          //console.log(y);
+          //align(main);
         }
         if (e.target.innerText === 'Zoom in') {
           zoomLevel += 20;
           console.log(y);
-          align(main);
+          //align(main);
         }
         if (e.target.innerText === 'Zoom out') {
           zoomLevel -= 20;
           console.log(y);
-          align(main);
+          //align(main);
         }
+        align(main);
       });
     </script>
   </body>
