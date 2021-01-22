@@ -1,87 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login Form</title>
-    <style>
-      body {
-        padding: 15%;
-        display: flex;
-        text-align: center;
-        flex-direction: column;
-        background-color: rgba(128, 128, 128, 0.171);
-      }
-      p {
-        font-size: 3vw;
-      }
-      form {
-        display: flex;
-        background-color: white;
-        padding: 10%;
-        display: inline-block;
-        align-self: center;
-        flex-direction: column;
-        align-content: center;
-        text-align: left;
-        font-size: 2.5vw;
-        width: 300px;
-        height: 300px;
-        align-self: center;
-      }
-      input {
-        width: 100%;
-        text-size-adjust: auto;
-      }
-      button {
-        background-color: black;
-        width: 80px;
-        border-radius: 30px;
-        color: white;
-      }
-      .fa {
-        color: white;
-        font-size: 27px;
-        margin-left: 8px;
-      }
-      #validation-txt {
-        color: red;
-        font-size: 18px;
-        width: 300px;
-      }
-      #password-3 {
-        -webkit-text-security: disc;
-        -moz-text-security: circle;
-        -text-security: circle;
-      }
-      input[type='number']::-webkit-inner-spin-button,
-      input[type='number']::-webkit-outer-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <form>
-      <p>ACCOUNT LOGIN</p>
-      <label for="username">
-        USERNAME<br />
-        <input id="username " type="text" autofocus required /><br />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Form</title>
+  <style>
+    body {
+      padding: 15%;
+      display: flex;
+      text-align: center;
+      flex-direction: column;
+      background-color: rgba(128, 128, 128, 0.171);
+    }
+
+    p {
+      font-size: 3vw;
+    }
+
+    form {
+      display: flex;
+      background-color: white;
+      padding: 10%;
+      display: inline-block;
+      align-self: center;
+      flex-direction: column;
+      align-content: center;
+      text-align: left;
+      font-size: 2.5vw;
+      width: 300px;
+      height: 300px;
+      align-self: center;
+    }
+
+    input {
+      width: 100%;
+      text-size-adjust: auto;
+    }
+
+    button {
+      background-color: black;
+      width: 80px;
+      border-radius: 30px;
+      color: white;
+    }
+
+    .pass i {
+      margin-left: -30px;
+      cursor: pointer;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <form>
+    <p>ACCOUNT LOGIN</p>
+    <label for="username">
+      USERNAME<br />
+      <input id="username " type="text" autofocus name="username" required /><br />
+    </label>
+    <div class="pass">
+      <label for="password">
+        PASSWORD<br />
+        <input id="password" type="password" name="password" required /><br /><br />
+        <i class="far fa-eye" id="togglePassword"></i>
       </label>
-      <div class="pass">
-        <label for="username">
-          PASSWORD<br />
-          <input id="password-field" type="password" required /><br /><br />
-          <i
-            id="pass-status"
-            class="fa fa-eye"
-            aria-hidden="true"
-            onClick="viewPassword()"
-          ></i>
-        </label>
-      </div>
-      <button type="submit">Login</button>
-    </form>
-    <script src="loginForm.js"></script>
-  </body>
+    </div>
+    <button type="submit">Login</button>
+  </form>
+  <script src="loginForm.js"></script>
+</body>
+
 </html>

@@ -1,17 +1,12 @@
 'use strict';
 
-function viewPassword()
-{
-  var passwordInput = document.getElementById('password-field');
-  var passStatus = document.getElementById('pass-status');
- 
-  if (passwordInput.type == 'password'){
-    passwordInput.type='text';
-    passStatus.className='fa fa-eye-slash';
-    
-  }
-  else{
-    passwordInput.type='password';
-    passStatus.className='fa fa-eye';
-  }
-}
+const togglePassword = document.querySelector('#togglePassword');
+const password = document.querySelector('#password');
+
+togglePassword.addEventListener('click', function (e) {
+  // toggle the type attribute
+  const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+  password.setAttribute('type', type);
+  // toggle the eye slash icon
+  this.classList.toggle('fa-eye-slash');
+});

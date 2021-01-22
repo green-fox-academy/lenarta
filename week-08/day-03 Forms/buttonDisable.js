@@ -10,13 +10,7 @@ const inactivate = (element) => {
   element.setAttribute("style", "opacity: 0.4;")
 }
 
-//const reset = (element1, element2)
-
-let dog = false;
-let cat = false;
 let viktor = false;
-
-
 
 const loveCats = document.getElementById('lovecats');
 loveCats.disabled = true;
@@ -30,19 +24,15 @@ container.addEventListener('change', (e) => {
   console.log(e.target.value);
 
   if (e.target.value === 'Dog') {
-    dog = true;
     viktor = false;
     activate(signUp)
   }
   if (e.target.value === 'Cat') {
     viktor = false;
-    cat = true;
     activate(signUp)
   }
   if (e.target.value === 'Viktor') {
     viktor = true;
-    dog = false;
-    cat = false;
    inactivate(signUp)
     inactivate(loveCats)
   }
@@ -76,6 +66,4 @@ buttons.addEventListener('click', (e) => {
   if (e.target.value === 'lovecats' || e.target.value === 'signup') {
   alert(`Thank you, you've successfully signed up for cat facts`)
   }
-
-  
-})
+});

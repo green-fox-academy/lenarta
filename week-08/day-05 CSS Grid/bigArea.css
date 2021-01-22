@@ -1,0 +1,19 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  background-color: black;
+}
+#content {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+#content div {
+  background-color:rgb(171, 86, 211);
+}
+.one {
+grid-column-start: 1;
+grid-column-end: 3;
+}
