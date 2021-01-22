@@ -9,6 +9,7 @@ body {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(3, minmax(200px, 100%));
+  grid-auto-rows: minmax(min-content, max-content);
   gap: 10px;
 }
 
