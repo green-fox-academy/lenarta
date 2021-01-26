@@ -10,6 +10,7 @@
         box-sizing: border-box;
         font-family: arial;
       }
+
       section {
         display: grid;
         grid-auto-rows: 50px;
@@ -17,19 +18,23 @@
         width: 1000px;
         margin: 0 auto;
       }
+
       section div {
         box-shadow: 0px 0px 10px #666 inset;
         text-align: center;
         line-height: 50px;
       }
+
       .not-prime {
         background: tomato;
       }
+
       .prime {
         background: limegreen;
       }
     </style>
   </head>
+
   <body>
     <section>
       <div>1</div>
@@ -61,7 +66,7 @@
 
         if (check < 2) {
           divList[number].classList.add('not-prime');
-          return
+          return;
         }
 
         for (let i = 2; i < check; i++) {
@@ -70,7 +75,7 @@
             divList[number].classList.add('not-prime');
             //console.log(divList[number]);
             return;
-          } 
+          }
         }
         divList[number].classList.add('prime');
       };

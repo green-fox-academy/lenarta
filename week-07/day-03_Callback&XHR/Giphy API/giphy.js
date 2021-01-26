@@ -20,7 +20,7 @@ xhr.onload = () => {
     //giphy.style.maxWidth = '100px;';
     //giphy.style.maxHeight = '100px;';
     //giphy.style.backgroundImage = `url("${giphylist.data[i].images.fixed_height.url}");`
-    giphy.innerHTML = `<a href="${giphylist.data[i].embed_url}"><img src="${giphylist.data[i].images.fixed_height.url}[0]"></img></a>`;
+    giphy.innerHTML = `<a href="${giphylist.data[i].embed_url}"><img src="${giphylist.data[i].images.fixed_height.url}"></img></a>`;
     thumbnails.appendChild(giphy);
   }
 };
