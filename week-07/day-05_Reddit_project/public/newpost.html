@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reddit new post</title>
+    <link rel="stylesheet" href="poststyle.css" />
+    <link rel="stylesheet" href="newpoststyle.css" />
+  </head>
+  <body>
+    <header>
+      <p1>SPACE</p1>
+      <p2>POST TO SPACE</p2>
+    </header>
+    <div id="formbox">
+      <form>
+        <label for="title"
+          >Title:<br />
+          <input id="title" type="text" name="title" required /> </label
+        ><br />
+
+        <label for="url"
+          >URL:<br />
+          <input id="url" type="url" name="url" required /><br /> </label
+        ><br />
+        <button id="newPost" type="submit">SUBMIT</button>
+      </form>
+    </div>
+    <div class="confirm"></div>
+    <div class="butts">
+      <button class="hidden" id="ok">OK</button><br /><br />
+      <button class="hidden" id="remove">Remove</button>
+    </div>
+    <script src="newpost.js"></script>
+    <script src="functions.js"></script>
+    <script src="redditfrontend.js"></script>
+  </body>
+</html>

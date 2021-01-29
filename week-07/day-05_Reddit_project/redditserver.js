@@ -5,8 +5,9 @@ const mysql = require('mysql');
 const app = express();
 app.use(express.json());
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
 
-let conn = mysql.createConnection({
+const conn = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: 'password1',
@@ -21,11 +22,13 @@ conn.connect((err) => {
 });
 
 app.get('/', (req, res) => {
-  res.send('műxik');
-  //res.sendFile('index.html');
+  res.sendFile(__dirname + '/public/post.html');
 });
-
-app.get('/posts', (req, res) => {
+app.get('/newpost', (req, res) => {
+  res.sendFile(__dirname + '/public/newpost.html');
+  //res.sendFile('newpost.html');
+});
+app.get('/post', (req, res) => {
   //console.log(req.headers);
   conn.query(`SELECT * FROM posts`, (err, rows) => {
     //console.log(rows);
@@ -38,7 +41,7 @@ app.get('/posts', (req, res) => {
   });
 });
 
-app.post('/posts', (req, res) => {
+app.post('/post', (req, res) => {
   conn.query(
     `INSERT INTO posts (title, url, owner)
           VALUES(?,?,?);`,
@@ -65,7 +68,7 @@ app.post('/posts', (req, res) => {
   );
 });
 
-app.put('/posts/:postId/upvote', (req, res) => {
+app.put('/post/:postId/upvote', (req, res) => {
   conn.query(
     `UPDATE posts 
           SET score = score + 1 
@@ -92,7 +95,7 @@ app.put('/posts/:postId/upvote', (req, res) => {
   );
 });
 
-app.put('/posts/:postId/downvote', (req, res) => {
+app.put('/post/:postId/downvote', (req, res) => {
   conn.query(
     `UPDATE posts 
           SET score = score - 1 
@@ -118,24 +121,27 @@ app.put('/posts/:postId/downvote', (req, res) => {
   );
 });
 
-app.delete('/posts/:postId', (req, res) => {
+app.delete('/post/:postId', (req, res) => {
+  let post;
   conn.query(
-    `DELETE FROM posts WHERE post_id = ${req.params.postId};`,
+    `SELECT * FROM posts WHERE post_id = ${req.params.postId};`,
     (err, rows) => {
       if (err) {
         console.log(err.toString());
-        res.status(200).json({ error: 'database error' });
+        res.status(500).json({ error: 'database error' });
         return;
       }
+      post = rows;
+
       conn.query(
-        `SELECT * FROM posts WHERE post_id = ${req.params.postId};`,
+        `DELETE FROM posts WHERE post_id = ${req.params.postId};`,
         (err, rows) => {
           if (err) {
             console.log(err.toString());
-            res.status(500).json({ error: 'database error' });
+            res.status(200).json({ error: 'database error' });
             return;
           }
-          res.status(200).json(rows);
+          res.status(200).json(post);
         }
       );
     }
