@@ -18,33 +18,33 @@ You can work in the html or in a separate js file. Like:
     <script src="queryselector-1.js"></script>
     */
 const king = document.getElementById('b325');
-    console.log('king', king);
-    //window.alert(king.innerText);
+console.log('king', king);
+//window.alert(king.innerText);
 
-    const lamplighter = document.querySelector('.b329');
-    console.log('lamplighter', lamplighter);
+const lamplighter = document.querySelector('.b329');
+console.log('lamplighter', lamplighter);
 
-    const asteroids = document.querySelectorAll('div.asteroid');
-    for (let i = 0; i < asteroids.length; i++) {
-      console.log(asteroids[i]);
-    }
+const asteroids = document.querySelectorAll('div.asteroid');
+for (let i = 0; i < asteroids.length; i++) {
+  console.log(asteroids[i]);
+}
 
-    const businessLamp = [document.querySelector('p'), lamplighter]
-    for (let i = 0; i < businessLamp.length; i++) {
-      console.log('businessLamp', businessLamp[i]);
-    }
-    const conceitedMan = document.getElementsByClassName('asteroid b326')[0]
-    //console.log(conceitedMan[0])
+const businessLamp = [document.querySelector('p'), lamplighter];
+for (let i = 0; i < businessLamp.length; i++) {
+  console.log('businessLamp', businessLamp[i]);
+}
+const conceitedMan = document.getElementsByClassName('asteroid b326')[0];
+//console.log(conceitedMan[0])
 
-    const conceitedKing = [king, conceitedMan]
-    console.log(document.getElementsByClassName('asteroid b326')[0]);
+const conceitedKing = [king, conceitedMan];
+console.log(document.getElementsByClassName('asteroid b326')[0]);
 
-    for (let i = 0; i < conceitedKing.length; i++) {
-      window.alert(conceitedKing[i].innerText)
-    }
+for (let i = 0; i < conceitedKing.length; i++) {
+  window.alert(conceitedKing[i].innerText);
+}
 
-    const noBusiness = [king, conceitedMan, lamplighter]
+const noBusiness = [king, conceitedMan, lamplighter];
 
-    noBusiness.forEach(element => {
-      console.log('No business',element)
-    });
+noBusiness.forEach((element) => {
+  console.log('No business', element);
+});

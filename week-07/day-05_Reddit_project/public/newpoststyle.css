@@ -50,11 +50,10 @@ header p2 {
 }
 #formbox {
   display: flex;
-  padding: 10px;
-  grid-template-rows: 1fr 1fr 1fr;
-  height: 20%;
+  padding: 1vw;
+  height: 40%;
   width: 50%;
-  gap: 15px;
+  gap: 2vw;
   background-color: rgb(112 124 171);
   margin: 3%;
 }

@@ -5,5 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('load', () => {
-  setButtons();
+  setUpvote();
+  setDownvote();
+  setRemove();
 });

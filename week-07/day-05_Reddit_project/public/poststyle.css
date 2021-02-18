@@ -1,19 +1,20 @@
 * {
-  margin: 0px;
-  padding: 0px;
+  padding: 0;
+  margin: 0;
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
 body {
-  display: grid;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   background-color: rgb(37 59 107);
+  display: grid;
 }
 header {
   overflow: hidden;
   display: flex;
-  height: 150px;
+  height: 20vw;
   width: 100%;
   background-image: url('assets/blue-universe-956981-1500x844.jpg');
   background-size: 100%;
@@ -30,17 +31,38 @@ header p1 {
   letter-spacing: 7vw;
   text-indent: 7vw;
 }
+
+nav {
+  display: flex;
+  width: 100%;
+  height: 5vw;
+  background-color: white;
+  align-content: center;
+  position: sticky;
+  top: 0px;
+}
+#logo {
+  display: flex;
+  width: 8vw;
+  height: 8vw;
+  background-image: url('assets/bela fb again.png');
+  background-size: 100%;
+  border-radius: 50%;
+  border: 0.5vw solid white;
+  position: sticky;
+  top: 0px;
+  align-self: center;
+}
+
 #mainContent {
   display: grid;
   width: 80%;
-  height: auto;
-  justify-self: center;
-  align-self: center;
   grid-template-columns: repeat(3, 1fr);
   padding: 5%;
   padding-top: 4%;
-  gap: 15px;
-  grid-auto-rows: 50px;
+  gap: 3vw;
+  justify-content: center;
+  justify-self: center;
 }
 #mainContainer {
   display: flex;
@@ -91,18 +113,31 @@ button {
   cursor: pointer;
 }
 button:hover {
-  background-color: #3e8e41;
+  box-shadow: inset 0 0 10px rgb(37, 59, 107);
 }
 button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(-1px);
+  position: relative;
+  top: 1px;
 }
-
+button.used:active {
+  all: unset;
+}
+button:disabled {
+  box-shadow: none;
+}
+.remove,
+.modify {
+  width: 30%;
+}
 .buttUp {
   grid-column: 1 / 2;
   grid-row: 1 / 2;
   background-image: url('assets/upvote.png');
+}
+.buttUp.used {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  background-image: url('assets/upvoted.png');
 }
 .score {
   grid-column: 1 / 2;
@@ -114,13 +149,20 @@ button:active {
   grid-row: 3 / 4;
   background-image: url('assets/downvote.png');
 }
+.buttDown.used {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  background-image: url('assets/downvoted.png');
+}
 #aside {
   display: grid;
+  position: sticky;
+  top: 7vw;
   grid-template-rows: 30px 200px;
-  max-height: 200px;
+  max-height: 600px;
   gap: 15px;
 }
-a {
+#newPost {
   grid-row: 1 / 2;
   box-shadow: inset 0px -4px 15px 3px #23385d;
   background-color: rgb(87, 116, 196);
@@ -131,12 +173,13 @@ a {
   text-shadow: 0px 1px 0px #263666;
   text-align: center;
   width: auto;
+  height: 3vw;
 }
-a:hover {
+#newPost:hover {
   background: linear-gradient(to bottom, #726ca5 5%, #1f66b8 100%);
   background-color: #2e466e;
 }
-a:active {
+#newPost:active {
   position: relative;
   top: 1px;
 }

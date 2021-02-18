@@ -18,6 +18,7 @@ button.addEventListener('click', () => {
       let print = document.createElement('div');
       print.innerHTML = `${response.value.joke}<br><br>`;
       jokes.appendChild(print);
+      console.log(response);
     })
     .catch((err) => {
       console.log(err); //hibakezeles
