@@ -21,6 +21,13 @@ function App() {
       );
   }, []);
 
+  const [renderStart, setrenderStart] = useState(0);
+  const [renderEnd, setrenderEnd] = useState(7);
+
+  const renderedBeers = beers.filter((beer) => {
+    return beer.id > renderStart && beer.id < renderEnd;
+  });
+
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
@@ -28,12 +35,12 @@ function App() {
   } else {
     return (
       <div className="App">
+        <h1>Beers</h1>
         <div className="content">
-          <h1>Beers</h1>
-          {beers.map((beer) => (
+          {renderedBeers.map((beer) => (
             <div className="beers" key={beer.id}>
-              <h1>{beer.name}</h1>
               <img src={beer.image_url}></img>
+              <h1>{beer.name}</h1>
             </div>
           ))}
         </div>
