@@ -6,7 +6,6 @@ const RenderedComponent = ({ beers, beer }) => {
     <img src={beer.image_url} onClick={() => handleClickPic(beer.id)}></img>
   );
   const handleClickPic = (id) => {
-    console.log(beers[id].description);
     setItem(<p>{beers[id].description}</p>);
   };
   return <div className="item">{item}</div>;

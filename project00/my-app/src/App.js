@@ -9,31 +9,39 @@ function App() {
 
   const [renderStart, setrenderStart] = useState(0);
   const [renderEnd, setrenderEnd] = useState(7);
+  const [fetchStart, setFetchStart] = useState(1);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
-    fetch('https://api.punkapi.com/v2/beers?page=1&per_page=24 ')
-      .then((response) => response.json())
-      .then(
-        (response) => {
-          setIsLoaded(true);
-          setBeers(response);
-        },
-        (error) => {
-          setIsLoaded(true);
-          setError(error);
-        }
-      );
-  }, []);
-  console.log(beers);
+    console.log(page);
+    if (page === 1 || page % 4 === 0) {
+      fetch(`https://api.punkapi.com/v2/beers?page=${fetchStart}&per_page=24`)
+        .then((response) => response.json())
+        .then(
+          (response) => {
+            setIsLoaded(true);
+            setBeers(response);
+            //setFetchStart(fetchStart + 1);
+          },
+          (error) => {
+            setIsLoaded(true);
+            setError(error);
+          }
+        );
+    }
+  }, [page]);
+
   const renderedBeers = beers.filter((beer) => {
     return beer.id > renderStart && beer.id < renderEnd;
   });
 
   const handleClickNext = () => {
+    setPage(page + 1);
     setrenderStart(renderStart + 6);
     setrenderEnd(renderEnd + 6);
   };
   const handleClickPrev = () => {
+    setPage(page - 1);
     setrenderStart(renderStart - 6);
     setrenderEnd(renderEnd - 6);
   };
