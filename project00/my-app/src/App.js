@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.css';
+import RenderedComponent from './RenderedComponent';
 
 function App() {
   const [error, setError] = useState(null);
@@ -10,7 +11,7 @@ function App() {
   const [renderEnd, setrenderEnd] = useState(7);
 
   useEffect(() => {
-    fetch('https://api.punkapi.com/v2/beers')
+    fetch('https://api.punkapi.com/v2/beers?page=1&per_page=24 ')
       .then((response) => response.json())
       .then(
         (response) => {
@@ -23,9 +24,7 @@ function App() {
         }
       );
   }, []);
-
-  //const [renderedBeers, setRenderedBeers] = useState([]);
-
+  console.log(beers);
   const renderedBeers = beers.filter((beer) => {
     return beer.id > renderStart && beer.id < renderEnd;
   });
@@ -37,9 +36,6 @@ function App() {
   const handleClickPrev = () => {
     setrenderStart(renderStart - 6);
     setrenderEnd(renderEnd - 6);
-  };
-  const handleClickPic = (id) => {
-    console.log(beers[id].description);
   };
 
   const previousButton = renderEnd > 7;
@@ -55,10 +51,7 @@ function App() {
         <div className="content">
           {renderedBeers.map((beer) => (
             <div className="beers" key={beer.id}>
-              <img
-                src={beer.image_url}
-                onClick={() => handleClickPic(beer.id)}
-              ></img>
+              <RenderedComponent beer={beer} beers={beers} />
               <h1>{beer.name}</h1>
             </div>
           ))}
@@ -69,7 +62,6 @@ function App() {
               Previous
             </button>
           )}
-
           <button id="next" onClick={handleClickNext}>
             Next
           </button>

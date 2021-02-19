@@ -2,7 +2,7 @@
   text-align: center;
 }
 .body {
-  max-height: 400px;
+  max-height: 300px;
 }
 .content {
   display: grid;
@@ -12,14 +12,15 @@
   justify-content: center;
   padding: 5%;
   padding-top: 10px;
-  gap: 4vw;
+  gap: 2vw;
 }
 h1 {
   display: grid;
+  font-size: medium;
   align-self: flex-end;
   justify-self: center;
 }
-.beers {
+.item {
   display: grid;
   align-content: center;
   justify-content: center;
@@ -27,7 +28,7 @@ h1 {
 img {
   display: grid;
   justify-self: center;
-  max-height: 30vw;
+  max-height: 20vw;
 }
 button {
   width: 25vw;
